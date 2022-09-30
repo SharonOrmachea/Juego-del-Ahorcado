@@ -1,0 +1,63 @@
+/*Inicio del Codigo para el Encabezado*/
+
+body{
+    background-image: url("../imagenes/PaginaPrincipal.png");
+    background-size: 1920px 938px;
+    position: relative;
+}
+
+header{
+    position: relative;
+    /*background-color: #ffbee1;*/
+    height: 60px;
+}
+
+h1{
+    position: absolute;
+    top: 20px;
+    left: 120px;
+    font-size: 40px;
+}
+/*--------------------------------------------------------------*/
+
+.BotonesInicio{
+    position: absolute;
+    top: 330px;
+    left: 900px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.IniciarJuego{
+    margin-bottom: 20px;
+    
+}
+
+.boton{
+    width: 200px;
+    height: 100px;
+    border-radius: 20px;
+    
+}
+
+.SeccionAgregarPalabras{
+    display: none;
+}
+
+
+/*--------------------------------------------------------------*/
+/*Inicio del Codigo del Pie de Pagina*/
+
+footer{
+    /*background-color: #ffbee1;*/
+    position: relative;
+    height: 60px;
+    top: 590px;
+}
+
+h5{
+    position: absolute;
+    top: 20px;
+    left: 100px;
+    font-size: 20px;
+}

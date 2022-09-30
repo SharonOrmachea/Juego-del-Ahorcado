@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/estilos.css">
+    <script src="/js/funciones.js"></script>
+    <!-- <audio autoplay>
+        <source src="soundtrack/Main-Theme.mp3" type="audio/mp3">
+        Tu navegador no soporta HTML5 audio.
+    </audio>  -->
+
+</head>
+<body>
+    <header>
+        <h1 class="fliker1">Juego del Ahorcado</h1>
+    </header>
+
+    <main>
+        <div class="BotonesPP" id="BotonesPP">
+
+            <div class="IniciarJuego">
+                <button type="button" class="boton" id="Iniciar-Juego" onclick="iniciarJuego()">Iniciar Juego</button>
+            </div>  
+            
+            <div class="AgregarPalabras">
+                <button type="button" class="boton" id="Agregar-Palabra" onclick="seccionAgregarPalabras()">Agregar Palabra</button>
+            </div>
+
+        </div>
+
+        <div class="SeccionAgregarPalabras" id="SeccionAgregarPalabras">
+
+            <div class="palabraAgregada" id="palabraAgregada">
+                <input type="text" id="texto" placeholder="Ingrese la palabra aqui">
+            </div>
+
+            <div class="BotonesAP">
+
+                <button onclick="guardarPalabra()">Guardar</button>
+
+                <button onclick="volver()">Volver</button>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </main>
+
+    <footer>
+        <h5>Desarrollado por Sharon Belén Ormachea &#174</h5>
+    </footer>
+
+    
+</body>
+</html>
