@@ -1,7 +1,7 @@
 /*Inicio del Codigo para el Encabezado*/
 
 body{
-    background-image: url("../imagenes/PaginaPrincipal.png");
+    background-image: url('../imagenes/PaginaPrincipal.png');
     background-size: 1920px 938px;
     position: relative;
 }
