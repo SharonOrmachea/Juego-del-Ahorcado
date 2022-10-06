@@ -1,18 +1,103 @@
-let palabras = ["HTML", "CSS", "PYTHON"];
+// Codigo de Variables
 
-// let almacenamiento = localStorage.getItem("WordList");
+let listaPalabras = [];
 
-localStorage.setItem("listaPalabras", palabras)
-let listaPalabras = localStorage.getItem("listaPalabras");
+let palabraSecreta = "";
 
-console.log(listaPalabras);
+let tablero = document.getElementById("ahorcado").getContext("2d");
+
+let errores = 8;
+
+// Codigo de Iniciar Juego
+
+function iniciarJuego(){
+    
+    document.getElementById("BotonesPP").style.display = "none";
+    document.getElementById("SeccionAgregarPalabras").style.display = "none";
+    document.getElementById("apareceJuego").style.display = "inherit";
+    document.getElementById("ahorcado").style.display = "inherit";
+    
+    palabraRandom();
+    console.log(palabraSecreta);
+    console.log(palabraSecreta.length);
+    dibujarCanvas();
+    dibujarLinea();
+
+    document.onkeydown = (e) => {
+        let letra = e.key.toLocaleUpperCase();
+        
+
+        if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
+            for (let i = 0; i < palabraSecreta.length; i++){
+                if (palabraSecreta[i] === letra){
+                    letraCorrecta(i);
+                }
+            }
+        } else {
+            añadirLetraIncorrecta(letra)
+            letraIncorrecta(letra, errores);
+
+        }
+    }
+}
+
+
+function palabraRandom(){
+    
+    let lista = localStorage.getItem("listaPalabras");
+    
+    
+
+    if (lista == null){
+        listaPalabras = ["HTML", "CSS", "PYTHON"];
+    } else {
+        listaPalabras = JSON.parse(lista);
+    }
+
+    let cantLista = listaPalabras.length;
+    let palabraAleatoria = Math.floor(Math.random() * cantLista);
+    palabraSecreta = listaPalabras[palabraAleatoria];
+
+}
+
+function comprobarLetra(key){
+    let estado = false;
+
+    if (key >= 65 && letras.indexOf(key) || key <= 90 && letras.indexOf(key)){
+        letras.push(key);
+        console.log(key);
+        return estado
+    } else {
+        estado = true;
+        console.log(key);
+        return estado;
+    }
+}
+
+function añadirLetraIncorrecta(){
+    errores -= 1;
+    console.log(errores);
+}
+
+
+// Codigo de Agregar Palabras
+
 function seccionAgregarPalabras(){
     document.getElementById("BotonesPP").style.display = "none";
     document.getElementById("SeccionAgregarPalabras").style.display = "inherit";
+    
 }
 
 function guardarPalabra(){
-    let palabra = document.getElementById("texto").value
+    let palabra = (document.getElementById("texto").value).toUpperCase();
+    let lista = localStorage.getItem("listaPalabras");
+    
+
+    if (lista == null){
+        listaPalabras = ["HTML", "CSS", "PYTHON"];
+    } else {
+        listaPalabras = JSON.parse(lista);
+    }
 
     if (palabra.length < 9){
         let contador = 0;
@@ -23,10 +108,8 @@ function guardarPalabra(){
         }
         if (contador == listaPalabras.length){
             listaPalabras.push(palabra);
-            localStorage.setItem("listaPalabras", palabra);
-
-            
-            console.log("La palabra se agregó correctamente")
+            localStorage.setItem("listaPalabras", JSON.stringify(listaPalabras));
+            console.log("La palabra se agregó correctamente");
         } else {
             console.log("La palabra ingresada ya está guardada");
         }
@@ -37,18 +120,12 @@ function guardarPalabra(){
     }
 
     document.getElementById("texto").value = "";
-    console.log(palabras);
-    console.log(listaPalabras);
-    console.log(localStorage);
+
 }
 
 function volver(){
     document.getElementById("texto").value = "";
     document.getElementById("SeccionAgregarPalabras").style.display = "none";
     document.getElementById("BotonesPP").style.display = "block";
-}
-
-function iniciarJuego(){
-    console.log("Hola");
 }
 

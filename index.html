@@ -7,11 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="/css/reset.css">
     <link rel="stylesheet" href="/css/estilos.css">
-    <script src="/js/funciones.js"></script>
+    <script defer src="/js/funciones.js"></script> 
+    <script defer src="/js/canvas.js"></script>
     <!-- <audio autoplay>
         <source src="soundtrack/Main-Theme.mp3" type="audio/mp3">
         Tu navegador no soporta HTML5 audio.
-    </audio>  -->
+    </audio>  
+
+    defer o async -->
 
 </head>
 <body>
@@ -23,11 +26,15 @@
         <div class="BotonesPP" id="BotonesPP">
 
             <div class="IniciarJuego">
+
                 <button type="button" class="boton" id="Iniciar-Juego" onclick="iniciarJuego()">Iniciar Juego</button>
+
             </div>  
             
             <div class="AgregarPalabras">
+
                 <button type="button" class="boton" id="Agregar-Palabra" onclick="seccionAgregarPalabras()">Agregar Palabra</button>
+
             </div>
 
         </div>
@@ -35,20 +42,35 @@
         <div class="SeccionAgregarPalabras" id="SeccionAgregarPalabras">
 
             <div class="palabraAgregada" id="palabraAgregada">
+
                 <input type="text" id="texto" placeholder="Ingrese la palabra aqui">
+
             </div>
 
             <div class="BotonesAP">
 
                 <button onclick="guardarPalabra()">Guardar</button>
-
                 <button onclick="volver()">Volver</button>
 
             </div>
 
         </div>
 
+        
 
+        <div class="canvas" id="apareceJuego">
+            <!-- Canvas -->
+            <canvas id="ahorcado" width="1200" height="860"></canvas>
+            <div class="zonaPalabra">
+            </div>
+
+            <!-- <div class="zonaAhorcado">
+
+
+
+            </div> -->
+
+        </div>
 
 
 
@@ -67,6 +89,7 @@
         <h5>Desarrollado por Sharon Belén Ormachea &#174</h5>
     </footer>
 
-    <!-- <script src="js/funciones.js"></script> -->
+    <!-- <script src="js/funciones.js"></script>
+    <script src="js/canvas.js"></script> -->
 </body>
 </html>
