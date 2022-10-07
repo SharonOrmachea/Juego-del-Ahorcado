@@ -5,7 +5,7 @@ function dibujarCanvas(){
     tablero.lineJoin = "round";
     tablero.fillStyle = "#c7cc00";
     tablero.strokeStyle = "#000000";
-    //tamaño del canvas
+    // Tamaño del canvas
     tablero.fillRect(0,0,1200,860);
     // Base de la ahorca
     tablero.beginPath();
