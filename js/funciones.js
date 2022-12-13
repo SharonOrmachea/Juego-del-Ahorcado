@@ -6,6 +6,8 @@ let palabraSecreta = "";
 
 let tablero = document.getElementById("ahorcado").getContext("2d");
 
+// let letras = [];
+
 let errores = 8;
 
 // Codigo de Iniciar Juego
@@ -27,20 +29,46 @@ function iniciarJuego(){
         let letra = e.key.toLocaleUpperCase();
         
 
-        if(comprobarLetra(letra) && palabraSecreta.includes(letra)){
+        if( palabraSecreta.includes(letra)){
             for (let i = 0; i < palabraSecreta.length; i++){
                 if (palabraSecreta[i] === letra){
                     letraCorrecta(i);
                 }
             }
         } else {
-            añadirLetraIncorrecta(letra)
+            añadirLetraIncorrecta()
             letraIncorrecta(letra, errores);
 
         }
     }
 }
 
+
+
+// function comprobarLetra(key){
+//     let estado = false;
+
+//     if (key > 64 && palabraSecreta.indexOf(key) || key < 91 && palabraSecreta.indexOf(key)){
+//         letras.push(key);
+//         console.log(key);
+//         console.log(letras + "if")
+//         return estado
+//     } else {
+//         estado = true;
+//         console.log(key);
+//         console.log(letras + "else")
+//         return estado;
+//     }
+    
+
+    
+// }
+
+function añadirLetraIncorrecta(){
+    errores -= 1;
+
+    console.log(errores);
+}
 
 function palabraRandom(){
     
@@ -60,24 +88,9 @@ function palabraRandom(){
 
 }
 
-function comprobarLetra(key){
-    let estado = false;
 
-    if (key >= 65 && letras.indexOf(key) || key <= 90 && letras.indexOf(key)){
-        letras.push(key);
-        console.log(key);
-        return estado
-    } else {
-        estado = true;
-        console.log(key);
-        return estado;
-    }
-}
 
-function añadirLetraIncorrecta(){
-    errores -= 1;
-    console.log(errores);
-}
+
 
 
 // Codigo de Agregar Palabras
